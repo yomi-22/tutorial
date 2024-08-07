@@ -15,18 +15,30 @@ test('Locators', async () => {
   // text
   const newRelease:Locator = page.locator("text=New Releases");
 
-  // getByTestId is used to locate web element/locator if the contains attribute data-testid
-  //page.getByTestId("").
+  // getByTestId is used to locate web element/locator if the contains attribute
+   // data-testid page.getByTestId("").
 
-  await searchbar.fill("mobile phones");
-  await searchbtn.click();
+  // await searchbar.fill("mobile phones");
+  // ANother way of  writing the code above. 
+  await page.fill("//input[@id='twotabsearchtextbox' and @name='field-keywords']", 'mobile phones'); // passing both locator and value at the same time
+
+  // await searchbtn.click();
+    // ANother way of  writing the click code above.
+  await page.click('#nav-search-submit-button')
   await newRelease.click();
 
    // locate weblement using getByRole 
    await expect(page.getByRole('link', { name: 'GBP - Pounds' })).toBeVisible();
  // await expect(page.getByRole('link', { name: 'Fashion' })).toBeVisible();
 
+ // by text
+   // await page.getByText("Name of the text displayed")
 
+   // getByLabel: use when a page has a label attribute
+   // await page.getByLabel("label Value")
+
+   // getByTitle
+   await page.getByTitle("Search in").fill("headset")
   
 
   

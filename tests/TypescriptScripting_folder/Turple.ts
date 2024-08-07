@@ -4,8 +4,8 @@ var myTuple:[number,string, boolean] =[101,"George", true];
 console.log(myTuple);
 // print single value out of tuple
 console.log(myTuple[0]); // print 101
-console.log(myTuple[0]); // print George
-console.log(myTuple[0]); // print true
+console.log(myTuple[1]); // print George
+console.log(myTuple[2]); // print true
 
 //Add item to existing tuple
 myTuple.push(102," ",false);
@@ -14,6 +14,7 @@ myTuple.pop();
 
 // update existing element in the tuple
 myTuple[1]="Scot";
+console.log(myTuple[1]); // replace George with Scot
 
 // Add multiple items to one tuple using array
 var myTupleArray:[string, number, Date] [] = [["Akin", 100, new Date(1999,5,22)],["Akinola", 200, new Date(1998,5,22)],

@@ -6,6 +6,10 @@ test('user login', async () => {
    const browser: Browser = await chromium.launch({ headless: false });
    const page: Page = await browser.newPage();
    await page.goto("https://naveenautomationlabs.com/opencart/index.php?rout=account/login");
+   
+   const pageUrl = page.url()
+   console.log(pageUrl)
+   expect(pageUrl).toBe('https://naveenautomationlabs.com/opencart/index.php?rout=account/login')
    const userDropdown: Locator = await page.locator("a[title='My Account']");
    const userLink: Locator = await page.locator("li.dropdown.open > ul > li:nth-child(2) > a");
 

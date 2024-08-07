@@ -99,3 +99,17 @@ function restParameterExample(name: string, ...address: string[]) {
 restParameterExample("Sola", "Gbenga");
 restParameterExample("Sola", "Seyi", "Alao", "Azzez");
 restParameterExample("Tom");
+
+
+// Function Signature
+
+let calc: (a: number, b: string, c: boolean) => boolean;
+
+calc = (age: number, name: string, isAdult: boolean) => {
+    if (age > 18 && name != "") {
+        return isAdult;
+    }
+    else {
+        return false
+    }
+}

@@ -1,5 +1,3 @@
-import { copyFileSync } from "fs";
-
 interface IAndroid {
     brand: string;
     model: string;
@@ -30,30 +28,26 @@ class mobilePhoneContractDetails implements mobileContract {
     }
 
     mobilePhoneContractDetails(): void {
-        console.log(`My phone brand is ${this.brand}, model is ${this.model} and it is contract 
-            is ${this.isContract}`);
+               console.log(`My phone brand is ${this.brand}, model is ${this.model} and it is contract 
+                is ${this.isContract}`);
+        
     }
 
     mobileInfo(): string {
-        return this.camera + this.apps;
+        return `My phone camera is ${this.camera}, has apps install
+    ${this.apps} from the manufacturer`;
     }
 
 }
-var mobile = new mobilePhoneContractDetails("Samsung","S10",false,"72Mp","Play Store");
+var mobile = new mobilePhoneContractDetails("Samsung", "S10", false, "72Mp", "Play Store");
 // mobile.brand = "Samsung";
 // mobile.model = "S10";
 // mobile.isContract = false;
 // mobile.camera = "76MPs";
 // mobile.apps = "Play Store";
 
-mobile.mobilePhoneContractDetails()
-{
-    console.log(`My phone brand is ${mobile.brand}, model is ${mobile.model} and it is contract 
-        is ${mobile.isContract}`);
-}
+mobile.mobilePhoneContractDetails();
+mobile.mobileInfo();
+  
 
-mobile.mobileInfo(){
-    console.log(`My phone camera is ${mobile.camera}, has apps install
-    ${mobile.apps} from the manufacturer`);
-}
 
